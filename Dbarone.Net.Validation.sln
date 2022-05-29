@@ -1,0 +1,28 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30114.105
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Dbarone.Net.Validation", "Dbarone.Net.Validation\Dbarone.Net.Validation.csproj", "{B1831AB5-F43E-4CAB-8637-9892A51D2F6C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Dbarone.Net.Validation.Tests", "Dbarone.Net.Validation.Tests\Dbarone.Net.Validation.Tests.csproj", "{3FB4E945-9D86-48E2-A3EE-CF892146500D}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{B1831AB5-F43E-4CAB-8637-9892A51D2F6C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B1831AB5-F43E-4CAB-8637-9892A51D2F6C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B1831AB5-F43E-4CAB-8637-9892A51D2F6C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B1831AB5-F43E-4CAB-8637-9892A51D2F6C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3FB4E945-9D86-48E2-A3EE-CF892146500D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3FB4E945-9D86-48E2-A3EE-CF892146500D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3FB4E945-9D86-48E2-A3EE-CF892146500D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3FB4E945-9D86-48E2-A3EE-CF892146500D}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
