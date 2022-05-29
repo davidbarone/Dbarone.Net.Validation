@@ -45,19 +45,19 @@ public class StringLengthValidatorAttribute : ValidatorAttribute
         if (value != null)
         {
             if (value.GetType() != typeof(string))
-                results.Add(new ValidationResult { Key = key, Source = source, Message = "StringLengthValidator.DoValidate(): Validator must operate on a string type." });
+                results.Add(new ValidationResult { Key = key, Source = source, Message = "StringLengthValidator.DoValidate(): Validator must operate on a string type.", Validator = this });
 
             if (Max < Min)
-                results.Add(new ValidationResult { Key = key, Source = source, Message = "StringLengthValidator.DoValidate(): Max is less than Min." });
+                results.Add(new ValidationResult { Key = key, Source = source, Message = "StringLengthValidator.DoValidate(): Max is less than Min.", Validator = this });
 
             if (Max < 0)
-                results.Add(new ValidationResult { Key = key, Source = source, Message = "StringLengthValidator.DoValidate(): Max cannot be negative." });
+                results.Add(new ValidationResult { Key = key, Source = source, Message = "StringLengthValidator.DoValidate(): Max cannot be negative.", Validator = this });
 
             if (Min < 0)
-                results.Add(new ValidationResult { Key = key, Source = source, Message = "StringLengthValidator.DoValidate(): Min cannot be negative." });
+                results.Add(new ValidationResult { Key = key, Source = source, Message = "StringLengthValidator.DoValidate(): Min cannot be negative.", Validator = this });
 
             if (value?.ToString()?.Length < Min || value?.ToString()?.Length > Max)
-                results.Add(new ValidationResult { Key = key, Source = source, Message = string.Format(ErrorMessage, key, Max, Min) });
+                results.Add(new ValidationResult { Key = key, Source = source, Message = string.Format(ErrorMessage, key, Max, Min), Validator = this });
         }
     }
 }

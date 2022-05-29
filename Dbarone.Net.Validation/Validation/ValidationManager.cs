@@ -12,11 +12,16 @@ public static class ValidationManager
     /// Validates an object. Throws an exception if not valid.
     /// </summary>
     /// <param name="target"></param>
-    public static void Validate(object obj)
+    public static void Validate(object? obj)
     {
         var results = PeekValidate(obj);
         if (results != null && results.Any())
             throw new ValidationException(results);
+    }
+
+    public static bool IsValid(object? obj) {
+        var results = PeekValidate(obj);
+        return !(results != null && results.Any());
     }
 
     /// <summary>

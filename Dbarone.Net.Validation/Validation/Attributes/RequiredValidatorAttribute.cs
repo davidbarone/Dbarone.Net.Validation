@@ -12,7 +12,7 @@ public class RequiredValidatorAttribute : ValidatorAttribute
     {
         if (value == null || (value != null && value.GetType().Default() == value))
         {
-            results.Add(new ValidationResult { Key = key, Source = source, Message = $"{key} is required." });
+            results.Add(new ValidationResult { Key = key, Source = source, Message = $"{key} is required.", Validator = this });
         }
     }
 }

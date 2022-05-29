@@ -21,9 +21,9 @@ public class MethodValidatorAttribute : ValidatorAttribute
             throw new ArgumentException("MethodValidatorAttribute.DoValidate(): Method validator has invalid signature (1).");
         ParameterInfo[] parameters = Method.GetParameters();
 
-        if (parameters.Length == 1 && parameters[0].ParameterType == typeof(IList<ValidationResult>))
+        if (parameters.Length == 2 && parameters[0].ParameterType == typeof(IList<ValidationResult>) && parameters[1].ParameterType == typeof(ValidatorAttribute))
         {
-            Method.Invoke(source, new object[] { results });
+            Method.Invoke(source, new object[] { results, this });
         }
         else
         {

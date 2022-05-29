@@ -19,14 +19,14 @@ public class NumericRangeValidatorAttribute : ValidatorAttribute
         if (value != null)
         {
             if (!value.GetType().IsNumeric())
-                results.Add(new ValidationResult { Key = key, Source = source, Message = "NumericRangeValidatorAttribute.DoValidate(): NumericRangeValidator must operate on a numeric type." });
+                results.Add(new ValidationResult { Key = key, Source = source, Message = "NumericRangeValidatorAttribute.DoValidate(): NumericRangeValidator must operate on a numeric type.", Validator = this });
 
             if (Max < Min)
-                results.Add(new ValidationResult { Key = key, Source = source, Message = "NumericRangeValidatorAttribute.DoValidate(): Max is less than Min." });
+                results.Add(new ValidationResult { Key = key, Source = source, Message = "NumericRangeValidatorAttribute.DoValidate(): Max is less than Min.", Validator = this });
 
             double v = Convert.ToDouble(value);
             if (v < Min || v > Max)
-                results.Add(new ValidationResult { Key = key, Source = source, Message = $"Value of {key} must be between {Min} and {Max}." });
+                results.Add(new ValidationResult { Key = key, Source = source, Message = $"Value of {key} must be between {Min} and {Max}.", Validator = this });
         }
     }
 }

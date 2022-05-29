@@ -23,4 +23,9 @@ public class ValidationResult
     /// The parent object being validated.
     /// </summary>
     public object Source { get; set; } = default!;
+
+    /// <summary>
+    /// The validator creating the result.
+    /// </summary>
+    public ValidatorAttribute Validator { get; set; } = default!;
 }

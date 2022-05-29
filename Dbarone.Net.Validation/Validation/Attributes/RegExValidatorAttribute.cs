@@ -18,10 +18,10 @@ public class RegExValidatorAttribute : ValidatorAttribute
         if (value != null)
         {
             if (value.GetType() != typeof(string))
-                results.Add(new ValidationResult { Key = key, Source = source, Message = "RegExValidatorAttribute.DoValidate(): Validator must operate on a string type." });
+                results.Add(new ValidationResult { Key = key, Source = source, Message = "RegExValidatorAttribute.DoValidate(): Validator must operate on a string type.", Validator = this });
 
             if (!ex.IsMatch(value.ToString() ?? ""))
-                results.Add(new ValidationResult { Key = key, Source = source, Message = $"{key} has an invalid value." });
+                results.Add(new ValidationResult { Key = key, Source = source, Message = $"{key} has an invalid value.", Validator = this });
         }
     }
 }
