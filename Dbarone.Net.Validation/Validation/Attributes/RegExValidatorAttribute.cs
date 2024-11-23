@@ -11,6 +11,11 @@ public class RegExValidatorAttribute : ValidatorAttribute
 {
     public string Pattern { get; set; } = default!;
 
+    public RegExValidatorAttribute(string pattern)
+    {
+        this.Pattern = pattern;
+    }
+
     public override void DoValidate(object? value, object source, string key, IList<ValidationResult> results)
     {
         Regex ex = new Regex(Pattern);

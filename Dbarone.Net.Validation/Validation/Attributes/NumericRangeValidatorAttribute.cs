@@ -12,6 +12,17 @@ public class NumericRangeValidatorAttribute : ValidatorAttribute
     public double Min { get; set; }
     public double Max { get; set; }
 
+    public NumericRangeValidatorAttribute(int max)
+    {
+        this.Max = max;
+    }
+
+    public NumericRangeValidatorAttribute(int min, int max)
+    {
+        this.Min = min;
+        this.Max = max;
+    }
+
     public override void DoValidate(object? value, object source, string key, IList<ValidationResult> results)
     {
         // note that numeri range ONLY runs if value not null.

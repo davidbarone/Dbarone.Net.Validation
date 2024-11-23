@@ -20,6 +20,17 @@ public class StringLengthValidatorAttribute : ValidatorAttribute
     /// </summary>
     public int Max { get; set; }
 
+    public StringLengthValidatorAttribute(int max)
+    {
+        this.Max = max;
+    }
+
+    public StringLengthValidatorAttribute(int min, int max)
+    {
+        this.Min = min;
+        this.Max = max;
+    }
+
     private string ErrorMessage
     {
         get
